@@ -29,10 +29,20 @@
 
 // Code Here 
 
+function first(arr, cb) {
+  let callFunc = []
+  for (let i = 0; i < arr.length; i++) {
+    callFunc.push(arr)
+  }
+  return cb(callFunc)
+}
+
+
+
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
-first(names, function(firstName){
+first(names, function (firstName) {
   console.log('The first name in names is ' + firstName);
   return firstName;
 });
@@ -49,8 +59,12 @@ first(names, function(firstName){
 
 //Code Here
 
+function last(names, first) {
+  let lastName = first + names
+}
+
 // Do not edit the code below.
-last(names, function(lastName){
+last(names, function (lastName) {
   console.log('The last name in names is ' + lastName);
   return lastName;
 });
@@ -67,8 +81,19 @@ last(names, function(lastName){
 
 //Code Here
 
+function multiply(num1, num2, num3) {
+  let product = num1 * num2
+  return num3(product)
+}
+
+function answer(product) {
+  return product
+}
+
+multiply(2, 3, answer)
+
 // Do not edit the code below.
-multiply(4, 3, function(answer){
+multiply(4, 3, function (answer) {
   console.log('The answer is ' + answer); //should console.log 12
 });
 // Do not edit the code above.
@@ -85,10 +110,17 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+contains(arr, name, function (cb) {
+  if (cb === true) {
+    console.log('Your name here')
+  } else {
+    return cb = false;
+  }
+})
 
 // Do not edit the code below.
-contains(names, 'Colt', function(result){
-  if(result === true){
+contains(names, 'Colt', function (result) {
+  if (result === true) {
     console.log('Colt is in the array');
   } else {
     console.log('Colt is not in the array');
@@ -107,8 +139,12 @@ contains(names, 'Colt', function(result){
 
 //Code Here
 
+function uniq() {
+
+}
+
 // Do not edit the code below.
-uniq(names, function(uniqArr){
+uniq(names, function (uniqArr) {
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
 // Do not edit the code above.
@@ -124,8 +160,12 @@ uniq(names, function(uniqArr){
 
 //Code Here 
 
+each(names, function (cb) {
+
+})
+
 // Do not edit the code below.
-each(names, function(item, indice){
+each(names, function (item, indice) {
   console.log('The item in the ' + indice + ' position is ' + item)
 });
 // Do not edit the code above.
@@ -163,7 +203,7 @@ var users = [
   },
 ];
 
-getUserById(users, '16t', function(user){
-  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address); 
+getUserById(users, '16t', function (user) {
+  console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address);
 });
 // Do not edit the code above.
